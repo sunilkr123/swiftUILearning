@@ -1,6 +1,6 @@
 //
-//  ObserablePropertyDemoApp.swift
-//  ObserablePropertyDemo
+//  EnvironmentObjectDemoApp.swift
+//  EnvironmentObjectDemo
 //
 //  Created by Sunil Kumar on 22/01/2023.
 //
@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct ObserablePropertyDemoApp: App {
+struct EnvironmentObjectDemoApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()

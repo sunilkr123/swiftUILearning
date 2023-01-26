@@ -1,11 +1,11 @@
 //
 //  User.swift
-//  ObserablePropertyDemo
+//  EnvironmentObjectDemo
 //
 //  Created by Sunil Kumar on 22/01/2023.
 //
 
 import Foundation
-class User : ObservableObject {
+class User: ObservableObject{
     @Published var name: String = String()
 }
