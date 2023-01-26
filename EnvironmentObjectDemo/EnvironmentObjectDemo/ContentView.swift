@@ -9,19 +9,20 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @ObservedObject var user: User = User()
+    @State var students: [Student] = [Student(name: "Sunil Kumar1", id: 23),
+                                     Student(name: "Sunil Kumar2", id: 24),
+                                     Student(name: "Sunil Kumar3", id: 25),
+                                     Student(name: "Sunil Kumar4", id: 26),
+                                     Student(name: "Sunil Kumar5", id: 27)]
     
     var body: some View {
-        NavigationView {
-            VStack {
-                Text("enetered text is \(user.name)").font(.largeTitle)
-                TextField("Enter you name", text: $user.name).font(.subheadline)
-                NavigationLink("Navigate to SecondView", destination: SecondView())
-            }.padding()
-             .navigationBarTitle( "Environment object ")
+         List {
+            ForEach (students, id: \.id) { student in
+                Text(student.name)
+            }.onDelete { indexValue in
+                students.remove(atOffsets: indexValue)
+            }
         }
-        .environmentObject(user)
-        
     }
 }
 

@@ -9,10 +9,10 @@ import SwiftUI
 
 struct ThirdView: View {
     
-    @EnvironmentObject var user: User  
+//    @EnvironmentObject var user: User
     
      var body: some View {
-        Text("This is for Third demo screen = \(user.name)")
+        Text("This is for Third demo screen = user.name)")
     }
 }
 

@@ -6,6 +6,7 @@
 //
 
 import Foundation
-class User: ObservableObject{
-    @Published var name: String = String()
-}
+struct Student: Identifiable{
+     var name: String
+     var id: Int
+ }
