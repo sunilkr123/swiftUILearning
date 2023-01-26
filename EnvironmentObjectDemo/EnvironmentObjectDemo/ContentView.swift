@@ -9,20 +9,24 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State var students: [Student] = [Student(name: "Sunil Kumar1", id: 23),
-                                     Student(name: "Sunil Kumar2", id: 24),
-                                     Student(name: "Sunil Kumar3", id: 25),
-                                     Student(name: "Sunil Kumar4", id: 26),
-                                     Student(name: "Sunil Kumar5", id: 27)]
+    let cities = BundleDecoder.decodeLandmarkBundleJson()
     
     var body: some View {
-         List {
-            ForEach (students, id: \.id) { student in
-                Text(student.name)
-            }.onDelete { indexValue in
-                students.remove(atOffsets: indexValue)
-            }
+        NavigationView {
+            List {
+               ForEach (cities, id: \.cityId) { city  in
+                    Section(header: Text(city.name)) {
+                       ForEach(city.landmarks, id: \.landmarkId) {
+                           landmark in
+                           NavigationLink(destination: LandmarkDetailsView(landamark: landmark)) {
+                               LandmarkRow(landmark: landmark)
+                           }
+                        }
+                   }
+               }
+           }.navigationBarTitle("landmarks lists")
         }
+     
     }
 }
 
