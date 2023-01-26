@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct HomeView: View {
     
     let cities = BundleDecoder.decodeLandmarkBundleJson()
     
@@ -18,7 +18,8 @@ struct ContentView: View {
                     Section(header: Text(city.name)) {
                        ForEach(city.landmarks, id: \.landmarkId) {
                            landmark in
-                           NavigationLink(destination: LandmarkDetailsView(landamark: landmark)) {
+                           NavigationLink(destination:
+                                            LandmarkDetailsView(landamark: landmark)) {
                                LandmarkRow(landmark: landmark)
                            }
                         }
@@ -32,6 +33,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        HomeView()
     }
 }

@@ -1,5 +1,5 @@
 //
-//  User.swift
+//  Student.swift
 //  EnvironmentObjectDemo
 //
 //  Created by Sunil Kumar on 22/01/2023.

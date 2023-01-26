@@ -11,6 +11,7 @@ struct LandmarkDetailsView: View {
     var landamark: Landmark
     
     var body: some View {
+        
          VStack {
             Image(landamark.photo)
                 .resizable()
